@@ -1,33 +1,24 @@
 import React from "react";
 import "./ModalSenha.css";
 
-export default function ModalEmail({ closeModal }) {
+export default function ModalSenha({ closeModal, handleFormChange, name, onSubmit}) {
+
+ 
   return (
     <div className="modalBackground">
       <div className="modalContainerSenha">
         <div className="title">
-          <h2>Trocar Senha</h2>
+          <h2>Trocar Nome</h2>
         </div>
 
-        <div className="body"></div>
+        <div className="body" ></div>
 
-        <label className="labeleSenha">Senha Atual</label>
+        <label className="labeleSenha">Novo nome</label>
         <input
+            onChange = {(e) => handleFormChange(e)}
             className="inputeSenha"
-            type="password"
-            name="senhaAtual" />
-
-        <label className="labeleSenha">Nova Senha</label>
-        <input
-            className="inputeSenha"
-            type="password"
-            name="newSenha" />
-
-        <label className="labeleSenha">Confirmar nova senha</label>
-        <input
-            className="inputeSenha"
-            type="password"
-            name="ConfirmarSenha" />
+            name="nome"
+            />
 
         <div className="footer">
           <button
@@ -39,7 +30,14 @@ export default function ModalEmail({ closeModal }) {
             Cancelar
           </button>
 
-          <button>Confirmar</button>
+          <button
+            type="submit"
+            onClick={() => {
+            closeModal(false)
+            onSubmit();
+            }}
+          >Confirmar
+          </button>
         </div>
       </div>
     </div>

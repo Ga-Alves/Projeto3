@@ -25,7 +25,7 @@ export default function Login(){
             </div>
 
             <div class="d-flex p-2 justify-content-center">
-                <Link className="link" to='/Cadastro'>Novo usuário? Cadastre-se Aqui</Link>
+                <Link className="link" to='/cadastro'>Novo usuário? Cadastre-se Aqui</Link>
             </div>
 
             </div>
