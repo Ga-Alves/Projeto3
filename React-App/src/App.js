@@ -26,21 +26,21 @@ export default function App() {
               <Nav.Link href="/home" ><img src={home} alt="home"></img ></Nav.Link>
               <Nav.Link href="/games"><img src={games} alt="games"></img></Nav.Link>
               <Nav.Link href="/account" ><img src={account} alt="count"></img></Nav.Link>
-              <Nav.Link className="xx" href="/login">
+              <Nav.Link className="xx" href="/">
                 <img src={out} alt="out"/>
               </Nav.Link>
             </Nav>
             </Container>
-          </Navbar>
+          </Navbar> */}
 
           <Routes >
-            <Route path='/login' element = {<Login/>} />
+            <Route path='/' element = {<Login/>} />
             <Route path='/cadastro' element = {<Cadastro/>} />
             <Route path='/account' element = {<MyAccount/>} />
             <Route path='/home' element = {<Home/>} />
             <Route path='/games' element = {<Games/>} />
-          </Routes> */}
-          <Cadastro/>
+          </Routes>
+
       </div> 
       </>
   );
