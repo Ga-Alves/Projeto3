@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+#Pg2{
+    min-height: 100vh;
+    background-color: #121212;
+}
+
+  
+.input-Cadastro{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 2000px;
+    font-size: 18px;
+    line-height: 42px;
+    color: white;
+    display: block;
+    background-color: #252525;
+}
+
+.label-Cadastro{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300px;
+    font-size: 18px;
+    line-height: 54px;
+    color: white;
+    display: block;
+    margin-bottom: 0;
+}
+
+  
+.login-btn, .login-btn:hover, .login-btn:active, .login-btn:visited {
+    background-color: #3700B3 ;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px ;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 150px;
+    font-size: 25px;
+    line-height: 54px;
+    color: white;
+    width: 200px;
+    height: 68px;
+    text-align: center;
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.link, .link:hover{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 200px;
+    font-size: 25px;
+    line-height: 54px;
+    color: white;
+    display: block;
+    color:#775CB6;
+
+}
+
+.voltar-btn{
+    position: absolute;
+    top:20px;
+    left: 20px;
+}
