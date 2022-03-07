@@ -3,10 +3,11 @@ import "./Cadastro.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
+
 import voltar from '../../images/voltar.svg';
 
 
-export default function Login(){
+export default function Cadastro(){
     return(
         <div id="Pg2" class ="d-flex flex-column justify-content-center align-items-center" >
             <div class="d-flex">
@@ -29,8 +30,8 @@ export default function Login(){
                 <button className="login-btn">Cadastre-se</button>
             </div>
 
-
-            <img className="voltar-btn" src={voltar} alt="voltar"/>
+            <Link to="/"><img className="voltar-btn" src={voltar} alt="voltar"/></Link>
+            
 
         </div>
     );
