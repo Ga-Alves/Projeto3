@@ -1,23 +1,36 @@
 import "./MyAccount.css";
 import ModalEmail from "../../components/ModalEmail/ModalEmail";
-import { useState } from "react";
 import ModalSenha from "../../components/ModalSenha/ModalSenha";
-import React from "react";
-import Criar_Usuario from "../../Requests/Usuario/Criar_Usuario";
+import React, {useState} from "react";
 import Logar from "../../Requests/Usuario/Logar";
+import Edit_User from '../../Requests/Usuario/Edit_User'
 
 export default function MyAccount() {
   const [openModalEmail, setOpenModalEmail] = useState(false);
   const [openModalSenha, setOpenModalSenha] = useState(false);
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
-  function cadastrar (){
-    const body = {
-      nome: 'zezin90',
-      email: 'zezin90@gmail.com',
-      senha: '12345',
+  
+
+  const handleFormChange =(e)=>{
+    if(e.target.getAttribute('name') === 'nome'){
+      setName(e.targe.value)
+    }else if(e.target.getAttribute('name') === 'email'){
+      setEmail(e.targe.value)
     }
-    Criar_Usuario(body);
   }
+
+  const onSubmit =()=>{
+    const Body = {
+      email : email,
+      nome: name
+    }
+    Edit_User(Body, 1)
+  }
+
+  
+
 
   function handleLogar (){
     const corpo = {
@@ -36,14 +49,14 @@ export default function MyAccount() {
         <label className="labele">Nome</label>
         <input
             className="input"
-            type="text"
-            placeholder="John Doe" />
+            type=""
+             />
         <label className="labele">Email</label>
 
         <input
           className="input"
           type="text"
-          placeholder="john.doe@gmail.com "
+          
         />
       </div>
 
@@ -55,21 +68,26 @@ export default function MyAccount() {
           Editar Email
         </button>
 
-        {openModalEmail && <ModalEmail closeModal={setOpenModalEmail} />}
+        {openModalEmail && <ModalEmail 
+                            closeModal={setOpenModalEmail} 
+                            handleFormChange = {handleFormChange}
+                            name = {email}
+                            />}
 
         <button
           className="botao"
           style={{top: "45%", marginTop: "30px"}}
           onClick={() => { if (!openModalEmail) setOpenModalSenha(true);}}
         >
-          Trocar Senha
+          Editar Nome
         </button>
 
-        {openModalSenha && <ModalSenha closeModal={setOpenModalSenha} />}
-
-        <button onClick={cadastrar}  >
-          cadastrar
-        </button>
+        {openModalSenha && <ModalSenha 
+                            closeModal={setOpenModalSenha}
+                            handleFormChange = {handleFormChange}
+                            onSubmit = {onSubmit}
+                            name = {name}
+                            />}
 
         <button onClick= {handleLogar}>
           logar

@@ -39,8 +39,7 @@ export default function App() {
             <Route path='/account' element = {<MyAccount/>} />
             <Route path='/home' element = {<Home/>} />
             <Route path='/games' element = {<Games/>} />
-          </Routes> 
-          <Cadastro/>
+          </Routes>          
       </div> 
       </>
   );
