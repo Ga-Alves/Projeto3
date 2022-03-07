@@ -20,8 +20,8 @@ export default function Item(props) {
                         {props.genero.map(a => <div class="genero">{a}</div>)}
                     </div>
                 </div>
-                <div class="col" onClick={() => { if (!openModalEdit) setOpenModalEdit(true);}}><img src={edit} alt="out"></img></div>
-                <div class="col"><img src={remove} alt="out"></img></div>
+                <div class="pointer col" onClick={() => { if (!openModalEdit) setOpenModalEdit(true);}}><img src={edit} alt="out"></img></div>
+                <div class="pointer col"><img src={remove} alt="out"></img></div>
                 {openModalEdit && <ModalEditGame closeModal={setOpenModalEdit} />}
             </div>
         </>
