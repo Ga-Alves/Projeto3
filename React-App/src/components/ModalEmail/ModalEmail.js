@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 const portalRoot = document.getElementById("portal-root");
 
-export default function ModalEmail({ closeModal }) {
+export default function ModalEmail({ closeModal, handleFormChange,  onSubmit}) {
   return ReactDOM.createPortal(
     <div className="modalBackground">
       <div className="modalContainerEmail">
@@ -14,7 +14,11 @@ export default function ModalEmail({ closeModal }) {
 
         <div className="body"></div>
         <label className="labele">Novo Email</label>
-        <input className="inpute" type="text" name="newEmail" />
+        <input
+          className="inpute" 
+          onChange = {(e) => handleFormChange(e)}
+          name="email" 
+         />
 
         <div className="footer">
           <button
@@ -24,7 +28,15 @@ export default function ModalEmail({ closeModal }) {
             Cancelar
           </button>
 
-          <button>Confirmar</button>
+          <button
+             type="submit"
+             onClick={() => {
+             closeModal(false)
+             onSubmit();
+             }}
+          >
+            Confirmar
+           </button>
         </div>
       </div>
     </div>,
