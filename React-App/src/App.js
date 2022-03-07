@@ -20,7 +20,7 @@ export default function App() {
   return (
     <>
       <div className="App">
-          {/* <Navbar className="navbar, align-items-start">
+          <Navbar className="navbar, align-items-start">
             <Container>
             <Nav className="flex-column">
               <Nav.Link href="/home" ><img src={home} alt="home"></img ></Nav.Link>
@@ -39,7 +39,7 @@ export default function App() {
             <Route path='/account' element = {<MyAccount/>} />
             <Route path='/home' element = {<Home/>} />
             <Route path='/games' element = {<Games/>} />
-          </Routes> */}
+          </Routes> 
           <Cadastro/>
       </div> 
       </>
