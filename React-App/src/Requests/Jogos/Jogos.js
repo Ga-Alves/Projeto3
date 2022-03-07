@@ -14,15 +14,17 @@ function criarJogo(body){
 }
 
 
-function getTodosJogos(body){
-   api.post('/usuarios/', body)
+function getTodosJogos(){
+   let response;
+  
+   api.get('/jogos/')
    .then((res) =>{
-      console.log(res);
+      response = res.data;
+      return response;
    })
    .catch((err) =>{
       console.log(err);
-      console.log(body);
-   });
+   });  
 }
 
 export { criarJogo , getTodosJogos }
