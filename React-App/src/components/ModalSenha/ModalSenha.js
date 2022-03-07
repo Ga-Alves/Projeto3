@@ -1,7 +1,7 @@
 import React from "react";
 import "./ModalSenha.css";
 
-export default function ModalSenha({ closeModal, handleFormChange, name, onSubmit}) {
+export default function ModalSenha({ closeModal, handleFormChange, onSubmit}) {
 
  
   return (

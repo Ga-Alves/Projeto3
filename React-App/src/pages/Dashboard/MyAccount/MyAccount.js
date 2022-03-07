@@ -15,9 +15,9 @@ export default function MyAccount() {
 
   const handleFormChange =(e)=>{
     if(e.target.getAttribute('name') === 'nome'){
-      setName(e.targe.value)
+      setName(e.target.value)
     }else if(e.target.getAttribute('name') === 'email'){
-      setEmail(e.targe.value)
+      setEmail(e.target.value)
     }
   }
 
@@ -71,7 +71,7 @@ export default function MyAccount() {
         {openModalEmail && <ModalEmail 
                             closeModal={setOpenModalEmail} 
                             handleFormChange = {handleFormChange}
-                            name = {email}
+                            onSubmit = {onSubmit}
                             />}
 
         <button
@@ -86,7 +86,7 @@ export default function MyAccount() {
                             closeModal={setOpenModalSenha}
                             handleFormChange = {handleFormChange}
                             onSubmit = {onSubmit}
-                            name = {name}
+                            setName = {setName}
                             />}
 
         <button onClick= {handleLogar}>
