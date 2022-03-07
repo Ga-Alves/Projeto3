@@ -14,17 +14,10 @@ function criarJogo(body){
 }
 
 
-function getTodosJogos(){
-   let response;
-  
-   api.get('/jogos/')
-   .then((res) =>{
-      response = res.data;
-      return response;
-   })
-   .catch((err) =>{
-      console.log(err);
-   });  
+async function getTodosJogos(){  
+   const response = await api.get('/jogos/')
+   
+   return response.data;
 }
 
 export { criarJogo , getTodosJogos }
