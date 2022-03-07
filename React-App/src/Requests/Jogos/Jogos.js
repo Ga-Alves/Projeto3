@@ -2,6 +2,7 @@ import api from '../../Service/api'
 
 
 function criarJogo(body){
+   console.log("passou aqui")
    api.post('/jogos/', body)
    .then((res) =>{
       console.log(res);

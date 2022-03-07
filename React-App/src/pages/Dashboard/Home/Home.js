@@ -1,6 +1,6 @@
 import "./Home.css";
-import Item from '../../components/Item/Item';
-import Table from "../../components/Table/Table";
+import Table from "../../../components/Table/Table";
+import Item from '../../../components/Item/Item';
 // import { Container, Row, Col } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home() {
