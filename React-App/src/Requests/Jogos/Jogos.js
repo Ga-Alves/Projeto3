@@ -20,4 +20,14 @@ async function getTodosJogos(){
    return response.data;
 }
 
-export { criarJogo , getTodosJogos }
+async function deleteJogo(id){  
+   await api.delete(`/jogos/${id}`)
+   .then((res) =>{
+      console.log(res);
+   })
+   .catch((err) =>{
+      console.log(err);
+   });
+}
+
+export { criarJogo , getTodosJogos, deleteJogo }

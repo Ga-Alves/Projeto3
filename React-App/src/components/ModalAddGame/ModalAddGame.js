@@ -6,7 +6,7 @@ import "./ModalAddGame.css";
 import { criarJogo } from "../../Requests/Jogos/Jogos";
 
 
-export default function ModalAddGame({ closeModal }) {
+export default function ModalAddGame({ closeModal , onModalClose}) {
 
   const [nome, setNome] = useState('');
   const [preco, setPreco] = useState('');
@@ -34,6 +34,8 @@ export default function ModalAddGame({ closeModal }) {
 
     console.log(obj);
     criarJogo(obj);
+    onModalClose();
+    closeModal(false)
   }
 
   return (
