@@ -18,6 +18,7 @@ export default function ModalEmail({ closeModal, handleFormChange,  onSubmit}) {
           className="inpute" 
           onChange = {(e) => handleFormChange(e)}
           name="email" 
+         
          />
 
         <div className="footer">
