@@ -2,31 +2,31 @@ import './App.css';
 import {Routes,Route} from 'react-router-dom'
 import './App.css';
 
-import Home from '../src/pages/Dashboard/Home/Home';
-import MyAccount from '../src/pages/Dashboard/MyAccount/MyAccount'
-import Games from '../src/pages/Dashboard/Games/Games'
+import Home from './pages/DashBoard/Home/Home';
+import MyAccount from './pages/DashBoard/MyAccount/MyAccount'
+import Games from './pages/DashBoard/Games/Games'
 import Login from './pages/Login/Login'
 import Cadastro from './pages/Cadastro/Cadastro'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Dashboard from './pages/Dashboard/Dashboard';
+import DashBoard from './pages/DashBoard/DashBoard';
 
 
 export default function App() {
   return (
     <>
-      <div className="App">    
+      <div className="App">
           <Routes >
             <Route path='/' element = {<Login/>} />
             <Route path='/cadastro' element = {<Cadastro/>} />
-            <Route path='/dashboard' element = {<Dashboard/>}>
+            <Route path='/dashBoard' element = {<DashBoard/>}>
                 <Route path='account' element = {<MyAccount/>} />
                 <Route path='home' element = {<Home/>} />
                 <Route path='games' element = {<Games/>} />
-            </Route>           
-          </Routes>          
-      </div> 
+            </Route>
+          </Routes>
+      </div>
       </>
   );
 }
