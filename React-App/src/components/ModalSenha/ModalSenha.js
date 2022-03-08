@@ -1,11 +1,15 @@
 import React from "react";
 import "./ModalSenha.css";
+import swal from 'sweetalert'
+
 
 export default function ModalSenha({ closeModal, handleFormChange, onSubmit}) {
 
- 
   return (
-    <div className="modalBackground">
+
+  
+    
+   <div className="modalBackground">
       <div className="modalContainerSenha">
         <div className="title">
           <h2>Trocar Nome</h2>
@@ -40,6 +44,6 @@ export default function ModalSenha({ closeModal, handleFormChange, onSubmit}) {
           </button>
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
