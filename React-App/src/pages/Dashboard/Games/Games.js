@@ -13,12 +13,11 @@ export default function Games() {
     }, [])
     
     const handleRenderPage = () => {
-        console.log("passa qui");
         getTodosJogos().then(setTodosJogos);
     }
 
     const jogos = todosJogos.map((jogo) => ( 
-        <Item preco={jogo.preco} titulo={jogo.nome} id={jogo.id} genero={[jogo.genero]} onDeletedItem={handleRenderPage} />
+        <Item preco={jogo.preco} titulo={jogo.nome} id={jogo.id} genero={[jogo.genero]} onDeletedItem={handleRenderPage} onModalClose={handleRenderPage}/>
     ))        
 
     return (

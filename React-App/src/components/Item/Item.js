@@ -12,11 +12,17 @@ import { deleteJogo } from '../../Requests/Jogos/Jogos';
 export default function Item(props) {
     const [openModalEdit, setOpenModalEdit] = useState(false);
     
-    const handleCLick = () => {
+
+
+    const handleRemove = () => {
         deleteJogo(props.id).then(() => props.onDeletedItem())
         console.log("deletou")       
     }
     
+    const handleClose = () => {
+        props.onModalClose()
+    }
+
     return (
         <>
             <div class="game row">
@@ -30,8 +36,8 @@ export default function Item(props) {
                 <div class="pointer col" onClick={() => { if (!openModalEdit) setOpenModalEdit(true);}}><img src={edit} alt="out"></img></div>
                 <div 
                     class="pointer col" 
-                    onClick={() => handleCLick()} ><img src={remove} alt="out"></img></div>
-                {openModalEdit && <ModalEditGame closeModal={setOpenModalEdit} />}
+                    onClick={() => handleRemove()} ><img src={remove} alt="out"></img></div>
+                {openModalEdit && <ModalEditGame closeModal={setOpenModalEdit} onModalClose={handleClose()} jogo={props} />}
             </div>
         </>
     );

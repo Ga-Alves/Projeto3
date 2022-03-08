@@ -25,7 +25,6 @@ export default function ModalAddGame({ closeModal , onModalClose}) {
   }
 
   const handleClickModal = () => {
-    console.log("hereonC")
     const obj = {
       nome,
       preco, 
