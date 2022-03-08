@@ -11,8 +11,6 @@ import { deleteJogo } from '../../Requests/Jogos/Jogos';
 
 export default function Item(props) {
     const [openModalEdit, setOpenModalEdit] = useState(false);
-    
-
 
     const handleRemove = () => {
         deleteJogo(props.id).then(() => props.onDeletedItem())
@@ -30,13 +28,19 @@ export default function Item(props) {
                 <div class="col-3">R${props.preco}</div>
                 <div class="col-4">
                     <div class=" col-4 bd-highlight mb-3 flex-row d-inline-flex">
-                        {props.genero.map(a => <div class="genero">{a}</div>)}
+                        {props.genero.map(a => <div class="genero">{a}{props.ofUser}</div>)}
                     </div>
                 </div>
-                <div class="pointer col" onClick={() => { if (!openModalEdit) setOpenModalEdit(true);}}><img src={edit} alt="out"></img></div>
                 <div 
-                    class="pointer col" 
-                    onClick={() => handleRemove()} ><img src={remove} alt="out"></img></div>
+                    class="pointer col"
+                    style={ props.ofUser ? {} : { display: "none" } } 
+                    onClick={() => { if (!openModalEdit) setOpenModalEdit(true);}}><img src={edit} alt="out"></img>
+                </div>
+                <div 
+                    class="pointer col"
+                    style={ props.ofUser ? {} : { display: "none" } } 
+                    onClick={() => handleRemove()} ><img src={remove} alt="out"></img>
+                </div>
                 {openModalEdit && <ModalEditGame closeModal={setOpenModalEdit} onModalClose={handleClose()} jogo={props} />}
             </div>
         </>
