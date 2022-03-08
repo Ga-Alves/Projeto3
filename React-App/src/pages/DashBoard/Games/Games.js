@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Games() {    
     const [todosJogos, setTodosJogos ] = useState([]);     
-    const idUsuario =3
+    const idUsuario =4
     useEffect(() => {
        getTodosJogos().then(setTodosJogos)
     }, [])
@@ -34,7 +34,7 @@ export default function Games() {
     return (
         <>
             <h1>Todos os jogos</h1>
-            <Table idUsuario={3} games={jogos} onModalClose={handleRenderPage}></Table>
+            <Table games={jogos} onModalClose={handleRenderPage}></Table>
         </>
     );
   }

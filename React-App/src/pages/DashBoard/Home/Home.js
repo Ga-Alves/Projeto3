@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 // import { Container, Row, Col } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home() {    
-    const [todosJogos, setTodosJogos ] = useState([]);     
-    const idUsuario = 3
+    const [todosJogos, setTodosJogos] = useState([]);     
+    const idUsuario = 4
     useEffect(() => {
        getTodosJogos().then(setTodosJogos)
     }, [])
@@ -34,7 +34,7 @@ export default function Home() {
     return (
         <>
             <h1>Meus jogos</h1>
-            <Table idUsuario={3} games={jogos} onModalClose={handleRenderPage}></Table>
+            <Table games={jogos} onModalClose={handleRenderPage}></Table>
         </>
     );
   }
