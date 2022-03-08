@@ -1,32 +1,80 @@
 import "./MyAccount.css";
-import ModalEmail from "../../../components/ModalEmail/ModalEmail";
-import ModalSenha from "../../../components/ModalSenha/ModalSenha";
-import React, {useState} from "react";
+import React from "react";
 import Logar from "../../../Requests/Usuario/Logar";
 import Edit_User from '../../../Requests/Usuario/Edit_User'
+import Swal from 'sweetalert2'
 
 export default function MyAccount() {
-  const [openModalEmail, setOpenModalEmail] = useState(false);
-  const [openModalSenha, setOpenModalSenha] = useState(false);
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
 
-  
+  const OpenModalNome =()=>{
+    Swal.fire({
+      title: "Editar Nome",
+      input: 'text',
+      inputLabel: 'Novo Nome',
+      showCancelButton: true,
+      preConfirm: (value) => {
+        if (!value) {
+          Swal.showValidationMessage(
+            ' Insira um nome'
+          )
+        }
+      }
 
-  const handleFormChange =(e)=>{
-    if(e.target.getAttribute('name') === 'nome'){
-      setName(e.target.value)
-    }else if(e.target.getAttribute('name') === 'email'){
-      setEmail(e.target.value)
-    }
+    }).then((res)=>{
+      console.log(res);
+      if(res.isConfirmed){
+        onSubmitNome(res.value);
+        Swal.fire({
+          icon: "success" ,
+          timer: "3000"  , 
+          showConfirmButton: false,
+          text: "Edição enviada"
+        })
+      }
+    })   
   }
 
-  const onSubmit =()=>{
+  const OpenModalEmail =()=>{
+    Swal.fire({
+      title:'Editar Email',
+      input: 'text',
+      inputLabel: 'Novo Email',
+      showCancelButton: true,
+      preConfirm: (value) => {
+        if (!value) {
+          Swal.showValidationMessage(
+            ' Insira um email'
+          )
+        }
+      }
+      
+    }).then((res)=>{
+      console.log(res);
+      if(res.isConfirmed){
+        Swal.fire({
+          icon: "success", 
+          timer: "3000" ,
+          showConfirmButton: false,
+          text: 'Edição enviada'
+        })
+        onSubmitEmail(res.value)
+      }   
+    })   
+    
+  }
+
+  const onSubmitNome =(value)=>{
     const Body = {
-      email : email,
-      nome: name
+      nome: value
     }
-    Edit_User(Body, 1)
+    Edit_User(Body, 3)
+  }
+  
+  const onSubmitEmail =(value)=>{
+    const Body = {
+      email: value
+    }
+    Edit_User(Body, 3)
   }
 
 
@@ -35,8 +83,7 @@ export default function MyAccount() {
       email: 'marcelomrad@gmail.com',
       senha: '123456',
     }
-    Logar(corpo);
-    
+    Logar(corpo);  
   }
 
   return (
@@ -65,31 +112,19 @@ export default function MyAccount() {
       <div >
         <button
           className="botao"
-          onClick={() => { if (!openModalSenha) setOpenModalEmail(true); }}
+          onClick={() => OpenModalEmail()}
         >
           Editar Email
         </button>
 
-        {openModalEmail && <ModalEmail 
-                            closeModal={setOpenModalEmail} 
-                            handleFormChange = {handleFormChange}
-                            onSubmit = {onSubmit}
-                            />}
 
         <button
           className="botao"
           style={{top: "45%", marginTop: "30px"}}
-          onClick={() => { if (!openModalEmail) setOpenModalSenha(true);}}
+          onClick={() => OpenModalNome()}
         >
           Editar Nome
         </button>
-
-        {openModalSenha && <ModalSenha 
-                            closeModal={setOpenModalSenha}
-                            handleFormChange = {handleFormChange}
-                            onSubmit = {onSubmit}
-                            setName = {setName}
-                            />}
 
         <button onClick= {handleLogar}>
           logar

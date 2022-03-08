@@ -18,6 +18,8 @@
     left: 13%;
 }
 
+
+
 .forms .input{
     width: 416px;
     height: 40px;
@@ -51,6 +53,107 @@
 
     color: #999999;
 }
+
+.swal2-container.swal2-center>.swal2-popup{
+    background-color: #252525;
+}
+
+.swal2-title{
+    
+    background: #333333;
+    border-radius: 8px 8px 0px 0px;
+
+    font-family: Poppins !important;
+    font-style: normal;
+    font-weight: 275;
+    font-size: 36px;
+    line-height: 54px;
+    color: #D9D9D9 !important; 
+    
+    
+}
+
+.swal2-input {
+    height: 2.625em;
+    padding: 0 0.75em;
+    background: #333333 !important;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 4px;
+    border: none  !important;
+    color: #888888 !important;
+}
+
+.swal2-html-container{
+    color: #D9D9D9 !important;
+}
+
+.swal2-input-label{
+    color: #D9D9D9;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 275;
+    font-size: 24px;
+    line-height: 36px;
+
+    margin-left: 38px !important;
+}
+
+.swal2-validation-message{
+    background: #252525 !important;
+    color: #D9D9D9 !important;
+    font-size: 20px !important;
+
+}
+
+.swal2-styled.swal2-confirm{
+    width: 100px;
+    height: 48px;
+    left: 653px;
+    top: 418px;
+
+    background: #3700B3 !important;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 36px;
+    align-items: center;
+
+    }
+
+ .swal2-styled.swal2-cancel{
+    width: 120px;
+    height: 44px;
+    left: 653px;
+    top: 418px;
+
+    background: #914949 !important;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 36px;
+    align-items: center;
+
+ }
+
+ .my-actions { margin: 0 2em; }
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+
+.right-gap {
+  margin-right: auto;
+}
+
+
 
 .botao {
     width: 173px;
