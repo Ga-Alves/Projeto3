@@ -24,17 +24,16 @@ export default function ModalEditGame({ closeModal, onModalClose, jogo}) {
     setPreco(e.target.value)
   }
 
-
   const handleEdit = () => {
     const obj = {
       nome,
       preco,
       genero: jogo.genero[0]
     }
-    
+
     editarJogo(jogo.id ,obj);
-    onModalClose();
     closeModal(false)
+    onModalClose();
   } 
   
   return ReactDOM.createPortal(
