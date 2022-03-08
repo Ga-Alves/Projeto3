@@ -29,8 +29,6 @@ export default function MyAccount() {
     Edit_User(Body, 1)
   }
 
-  
-
 
   function handleLogar (){
     const corpo = {
@@ -49,13 +47,17 @@ export default function MyAccount() {
         <label className="labele">Nome</label>
         <input
             className="input"
-            type=""
+            type = "text"
+            readOnly='true'
+            value={'marcelo'}
              />
         <label className="labele">Email</label>
 
         <input
           className="input"
           type="text"
+          readOnly='true'
+          value={'marcelo@gmail.com'}
           
         />
       </div>
