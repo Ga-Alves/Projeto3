@@ -7,7 +7,7 @@ import { useState } from "react";
 // import edit from '../../images/edit.svg';
 // import remove from '../../images/remove.svg';
 // import Item from '../Item/Item';
-export default function Table({games, onModalClose}) {
+export default function Table({idUsuario, games, onModalClose}) {
     const [openModalAddGame, setOpenModalAddGame] = useState(false);
     
     const handleClose = () => {

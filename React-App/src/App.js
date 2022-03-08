@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes,Route} from 'react-router-dom'
+import { Routes,Route } from 'react-router-dom'
 import './App.css';
 
 import Home from './pages/DashBoard/Home/Home';
@@ -20,7 +20,7 @@ export default function App() {
           <Routes >
             <Route path='/' element = {<Login/>} />
             <Route path='/cadastro' element = {<Cadastro/>} />
-            <Route path='/dashBoard' element = {<DashBoard/>}>
+            <Route path='/DashBoard' element = {<DashBoard/>}>
                 <Route path='account' element = {<MyAccount/>} />
                 <Route path='home' element = {<Home/>} />
                 <Route path='games' element = {<Games/>} />
