@@ -1,9 +1,9 @@
 import "./MyAccount.css";
-import ModalEmail from "../../components/ModalEmail/ModalEmail";
-import ModalSenha from "../../components/ModalSenha/ModalSenha";
+import ModalEmail from "../../../components/ModalEmail/ModalEmail";
+import ModalSenha from "../../../components/ModalSenha/ModalSenha";
 import React, {useState} from "react";
-import Logar from "../../Requests/Usuario/Logar";
-import Edit_User from '../../Requests/Usuario/Edit_User'
+import Logar from "../../../Requests/Usuario/Logar";
+import Edit_User from '../../../Requests/Usuario/Edit_User'
 
 export default function MyAccount() {
   const [openModalEmail, setOpenModalEmail] = useState(false);
