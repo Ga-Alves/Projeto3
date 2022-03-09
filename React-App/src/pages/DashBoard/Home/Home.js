@@ -3,11 +3,11 @@ import Table from "../../../components/Table/Table";
 import Item from '../../../components/Item/Item';
 import { getTodosJogos } from "../../../Requests/Jogos/Jogos";
 import { useEffect, useState } from "react";
+import GetUserId from '../../../Requests/Usuario/GetUserId'
 // import { Container, Row, Col } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home() {    
     const [todosJogos, setTodosJogos] = useState([]);     
-    const idUsuario = 4
     useEffect(() => {
        getTodosJogos().then(setTodosJogos)
     }, [])
@@ -16,7 +16,7 @@ export default function Home() {
         getTodosJogos().then(setTodosJogos);
     }
     function ofUser (jogo) {
-        return jogo.Usuario.id === idUsuario
+        return jogo.Usuario.id === GetUserId()
     }
 
     const jogos = todosJogos.map((jogo) => ( 

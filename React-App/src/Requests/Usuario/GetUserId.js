@@ -1,4 +1,4 @@
-export default function GetUserId(){
+export default function GetUserId() {
 
 let Usuario = {}
   Usuario = localStorage.getItem('user');
