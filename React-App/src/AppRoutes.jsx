@@ -5,12 +5,12 @@ import {
     Navigate,
 } from "react-router-dom";
 
-import Home from './pages/Dashboard/Home/Home';
-import MyAccount from './pages/Dashboard/MyAccount/MyAccount';
-import Games from './pages/Dashboard/Games/Games';
+import Home from './pages/DashBoard/Home/Home';
+import MyAccount from './pages/DashBoard/MyAccount/MyAccount';
+import Games from './pages/DashBoard/Games/Games';
 import Login from './pages/Login/Login';
 import Cadastro from './pages/Cadastro/Cadastro';
-import Dashboard from './pages/Dashboard/Dashboard';
+import Dashboard from './pages/DashBoard/DashBoard';
 
 import { AuthProvider, AuthContext } from "./contexts/auth";
 import React, { useState, useContext } from "react";

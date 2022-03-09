@@ -1,6 +1,5 @@
 import "./MyAccount.css";
 import React from "react";
-import Logar from "../../../Requests/Usuario/Logar";
 import Edit_User from '../../../Requests/Usuario/Edit_User'
 import Swal from 'sweetalert2'
 
@@ -12,6 +11,8 @@ export default function MyAccount() {
       input: 'text',
       inputLabel: 'Novo Nome',
       showCancelButton: true,
+      cancelButtonText:`Cancelar`,
+      confirmButtonText: `Enviar`, 
       preConfirm: (value) => {
         if (!value) {
           Swal.showValidationMessage(
@@ -39,6 +40,8 @@ export default function MyAccount() {
       title:'Editar Email',
       input: 'text',
       inputLabel: 'Novo Email',
+      confirmButtonText: `Enviar`,
+      cancelButtonText:`Cancelar`,
       showCancelButton: true,
       preConfirm: (value) => {
         if (!value) {
@@ -74,16 +77,7 @@ export default function MyAccount() {
     const Body = {
       email: value
     }
-    Edit_User(Body, 3)
-  }
-
-
-  function handleLogar (){
-    const corpo = {
-      email: 'marcelomrad@gmail.com',
-      senha: '123456',
-    }
-    Logar(corpo);  
+    Edit_User(Body, 4)
   }
 
   return (
@@ -126,9 +120,6 @@ export default function MyAccount() {
           Editar Nome
         </button>
 
-        <button onClick= {handleLogar}>
-          logar
-        </button>
       </div>
     </>
   );
