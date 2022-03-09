@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { AuthContext } from "../../contexts/auth";
+import React, { useState } from "react";
 import "./Login.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -11,14 +10,11 @@ export default function Login(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    const { authenticated, login } = useContext(AuthContext);
-
     const handleClick = () => {
         const obj = {
             email, 
             senha,
         }         
-        //login(email,senha);
         Logar(obj);
     };
 
@@ -53,9 +49,6 @@ export default function Login(){
             </div>
 
             </div>
-             <p>
-               {String(authenticated)} 
-            </p>
         </div>
     );
 }
