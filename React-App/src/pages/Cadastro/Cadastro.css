@@ -9,7 +9,6 @@
 
   
 .input-Cadastro{
-    font-family: Poppins;
     font-style: normal;
     font-weight: 2000px;
     font-size: 18px;
@@ -20,7 +19,6 @@
 }
 
 .label-Cadastro{
-    font-family: Poppins;
     font-style: normal;
     font-weight: 300px;
     font-size: 18px;
@@ -35,7 +33,7 @@
     background-color: #3700B3 ;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px ;
-    font-family: Poppins;
+    ;
     font-style: normal;
     font-weight: 150px;
     font-size: 25px;
@@ -50,7 +48,6 @@
 }
 
 .link, .link:hover{
-    font-family: Poppins;
     font-style: normal;
     font-weight: 200px;
     font-size: 25px;

@@ -2,8 +2,11 @@
     align-items: start;
     align-items: flex-start;
 
-    width: 10vh;
+    width: auto;
     height: 100vh;
+
+    padding: 0px !important;
+
   
     background: #333333;
     
@@ -12,4 +15,12 @@
   }
 .icon {
     margin-right: 50%;
+}
+
+.navbar-nav .nav-link {
+  padding: 20px !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgb(255 0 0 );
 }
