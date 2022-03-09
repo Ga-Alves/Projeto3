@@ -31,20 +31,20 @@ export default function Login(){
     };
 
     return(
-        <div id="Pg1" class ="d-flex justify-content-center align-items-center" >
-            <div class="d-flex flex-column mb-1">
+        <div id="Pg1" className ="d-flex justify-content-center align-items-center" >
+            <div className="d-flex flex-column mb-1">
 
-            <div class="p-2">
+            <div className="p-2">
                 <label for="email" className="label-Login">Email</label>
                 <input type="email" placeholder="" value={email} onChange={handleOnChangeEmail} className="input-Login"></input>
             </div>
 
-            <div class="p-2">
+            <div className="p-2">
                 <label for="senha" className="label-Login">Senha</label>
                 <input type="password" placeholder="" value={senha} onChange={handleOnChangeSenha} className="input-Login"></input>
             </div>
 
-            <div class="d-flex justify-content-center">
+            <div className="d-flex justify-content-center">
                 <button className="login-btn" onClick={() => handleClick()}>Entrar</button>
             </div>
 

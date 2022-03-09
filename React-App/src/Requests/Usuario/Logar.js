@@ -11,7 +11,7 @@ export default function Logar(body){
         const usuario = JSON.stringify(res.data);
         console.log(usuario);
         localStorage.setItem("user", JSON.stringify(res.data));
-        history.push("/dashboard");
+        history.push("/dashboard/home");
         document.location.reload(true);
     })
     .catch((err) =>{

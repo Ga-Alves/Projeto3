@@ -2,8 +2,11 @@ import "./MyAccount.css";
 import React from "react";
 import Edit_User from '../../../Requests/Usuario/Edit_User'
 import Swal from 'sweetalert2'
+import GetUserId from "../../../Requests/Usuario/GetUserId";
 
 export default function MyAccount() {
+
+  const Id = GetUserId();
 
   const OpenModalNome =()=>{
     Swal.fire({
@@ -70,14 +73,14 @@ export default function MyAccount() {
     const Body = {
       nome: value
     }
-    Edit_User(Body, 3)
+    Edit_User(Body, Id)
   }
   
   const onSubmitEmail =(value)=>{
     const Body = {
       email: value
     }
-    Edit_User(Body, 4)
+    Edit_User(Body, Id)
   }
 
   return (
@@ -89,7 +92,7 @@ export default function MyAccount() {
         <input
             className="input"
             type = "text"
-            readOnly='true'
+            readOnly={true}
             value={'marcelo'}
              />
         <label className="labele">Email</label>
@@ -97,7 +100,7 @@ export default function MyAccount() {
         <input
           className="input"
           type="text"
-          readOnly='true'
+          readOnly={true}
           value={'marcelo@gmail.com'}
           
         />
@@ -119,7 +122,9 @@ export default function MyAccount() {
         >
           Editar Nome
         </button>
-
+       {/*  <button onClick ={()=> consultar()}> 
+          consultar
+        </button> */}
       </div>
     </>
   );
