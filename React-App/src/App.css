@@ -2,16 +2,16 @@
 
 .App {
   background-color: #252525;
-  min-height: 100vh;
+  min-height: 100vh; 
+  height: auto;
+  min-width: 100vh; 
   font-size: calc(10px + 2vmin);
   color: white;
+  display: flex;
+  font-family: Poppins;
+
 }
-.navbar {
-  align-items: start;
-  background: #333333;
-  width: 10vh;
-  height: 100vh;
-}
+
 
 .nav-link {
   padding-top: 32px;
@@ -26,11 +26,10 @@ h1 {
   left: 152px;
   top: 30px;
 
-  font-family: Poppins;
+  ;
   font-style: normal;
   font-weight: 275;
   font-size: 48px;
-  /* line-height: 72px; */
   padding-left: 40px;
 
   color: #D9D9D9;

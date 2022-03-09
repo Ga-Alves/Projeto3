@@ -26,8 +26,6 @@
 
 
 .modalContainerAddGame .title{
-
-
     width: 540px;
     height: 79px;
 
@@ -41,7 +39,6 @@
 }
 
 .modalContainerAddGame .title .titulo{
-    font-family: Poppins;
     font-style: normal;
     color: #D9D9D9;
     font-size: 36px;
@@ -61,7 +58,7 @@
 .lGame{
     color: #D9D9D9;
 
-    font-family: Poppins;
+    ;
     font-style: normal;
     font-weight: 275;
     font-size: 24px;

@@ -1,9 +1,34 @@
 import "./MyAccount.css";
-import React from "react";
+import React,{useState, useEffect} from "react";
 import Edit_User from '../../../Requests/Usuario/Edit_User'
 import Swal from 'sweetalert2'
+import GetUserId from "../../../Requests/Usuario/GetUserId";
+import Ver_Usuario from "../../../Requests/Usuario/Ver_Usuario";
 
 export default function MyAccount() {
+  const [usuario, setUsuario] = useState('')
+
+  const Id = GetUserId();
+  
+  useEffect(() => {
+    Ver_Usuario(Id).then(setUsuario)
+  }, [])
+  console.log(usuario)
+
+
+  const onSubmitNome =(value)=>{
+    const Body = {
+      nome: value
+    }
+    Edit_User(Body, Id)
+  }
+  
+  const onSubmitEmail =(value)=>{
+    const Body = {
+      email: value
+    }
+    Edit_User(Body, Id)
+  }
 
   const OpenModalNome =()=>{
     Swal.fire({
@@ -25,13 +50,17 @@ export default function MyAccount() {
       console.log(res);
       if(res.isConfirmed){
         onSubmitNome(res.value);
+        setUsuario(res.value)
+
         Swal.fire({
           icon: "success" ,
-          timer: "3000"  , 
+          timer: '1000' , 
           showConfirmButton: false,
           text: "Edição enviada"
-        })
+        }).then(()=> document.location.reload())
+        
       }
+      
     })   
   }
 
@@ -40,7 +69,7 @@ export default function MyAccount() {
       title:'Editar Email',
       input: 'text',
       inputLabel: 'Novo Email',
-      confirmButtonText: `Enviar`,
+      confirmButtonText: `Confirmar`,
       cancelButtonText:`Cancelar`,
       showCancelButton: true,
       preConfirm: (value) => {
@@ -54,56 +83,46 @@ export default function MyAccount() {
     }).then((res)=>{
       console.log(res);
       if(res.isConfirmed){
+        onSubmitEmail(res.value)
+        setUsuario(res.value)
         Swal.fire({
           icon: "success", 
           timer: "3000" ,
           showConfirmButton: false,
           text: 'Edição enviada'
         })
-        onSubmitEmail(res.value)
+         
       }   
+      
     })   
     
   }
 
-  const onSubmitNome =(value)=>{
-    const Body = {
-      nome: value
-    }
-    Edit_User(Body, 3)
-  }
-  
-  const onSubmitEmail =(value)=>{
-    const Body = {
-      email: value
-    }
-    Edit_User(Body, 4)
-  }
-
+ 
   return (
-    <>
-      <h1 className = 'conta'>MINHA CONTA</h1>
+    <div className="MyAccount">
+      <h2 >MINHA CONTA</h2>
 
       <div className="forms">
         <label className="labele">Nome</label>
         <input
             className="input"
             type = "text"
-            readOnly='true'
-            value={'marcelo'}
+            readOnly={true}
+            value={usuario.nome}
              />
         <label className="labele">Email</label>
 
         <input
           className="input"
           type="text"
-          readOnly='true'
-          value={'marcelo@gmail.com'}
+          readOnly={true}
+          value={usuario.email}
           
         />
       </div>
 
-      <div >
+      <div className="botões" >
         <button
           className="botao"
           onClick={() => OpenModalEmail()}
@@ -119,8 +138,7 @@ export default function MyAccount() {
         >
           Editar Nome
         </button>
-
       </div>
-    </>
+    </div>
   );
 }

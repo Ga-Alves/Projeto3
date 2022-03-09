@@ -23,21 +23,21 @@ export default function Item(props) {
 
     return (
         <>
-            <div class="game row">
-                <div class="col-3">{props.titulo}</div>
-                <div class="col-3">R${props.preco}</div>
-                <div class="col-4">
-                    <div class=" col-4 bd-highlight mb-3 flex-row d-inline-flex">
-                        {props.genero.map(a => <div class="genero">{a}{props.ofUser}</div>)}
+            <div className="game row">
+                <div className="col-3">{props.titulo}</div>
+                <div className="col-3">R${props.preco}</div>
+                <div className="col-4">
+                    <div className=" col-4 bd-highlight mb-3 flex-row d-inline-flex">
+                        {props.genero.map(a => <div className="genero">{a}{props.ofUser}</div>)}
                     </div>
                 </div>
                 <div 
-                    class="pointer col"
+                    className="pointer col"
                     style={ props.ofUser ? {} : { display: "none" } } 
                     onClick={() => { if (!openModalEdit) setOpenModalEdit(true);}}><img src={edit} alt="out"></img>
                 </div>
                 <div 
-                    class="pointer col"
+                    className="pointer col"
                     style={ props.ofUser ? {} : { display: "none" } } 
                     onClick={() => handleRemove()} ><img src={remove} alt="out"></img>
                 </div>

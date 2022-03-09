@@ -1,9 +1,12 @@
-.formulario{
+.MyAccount{
+    width: 90vw;
+    margin-left: 12vw;
+    margin-top: 4vh;
+    margin-bottom: 20vh;
+}
 
-    width: 420px;
-    height: 46px;
-    left: 152px;
-    top: 204px;
+.formulario{
+    
 
     background: #333333;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -12,24 +15,20 @@
 }
 
 .forms{
-    margin-left: 40px;
-    position: absolute;
-    top:10%;
-    left: 13%;
+   display: flex;
+   flex-direction: column;
+   margin: 20px 0px ;
+   width: 450px;
 }
 
 
-
 .forms .input{
-    width: 416px;
-    height: 40px;
-
-
+   
     background: #333333;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
 
-    font-family: Poppins;
+    ;
     font-style: normal;
     font-size: 24px;
     line-height: 36px;
@@ -38,14 +37,12 @@
     color: #999999;
 }
 
+.forms .labele{
+    margin: 10px 0px;
+}
+
 .textFormulario{
 
-    width: 111px;
-    height: 36px;
-    left: 167px;
-    top: 209px;
-
-    font-family: Poppins;
     font-style: normal;
     font-weight: 275;
     font-size: 24px;
@@ -62,8 +59,6 @@
     
     background: #333333;
     border-radius: 8px 8px 0px 0px;
-
-    font-family: Poppins !important;
     font-style: normal;
     font-weight: 275;
     font-size: 36px;
@@ -90,7 +85,7 @@
 .swal2-input-label{
     color: #D9D9D9;
 
-    font-family: Poppins;
+    ;
     font-style: normal;
     font-weight: 275;
     font-size: 24px;
@@ -116,7 +111,7 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
 
-    font-family: Poppins;
+    ;
     font-style: normal;
     font-weight: 300;
     font-size: 36px;
@@ -135,7 +130,7 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
 
-    font-family: Poppins;
+    ;
     font-style: normal;
     font-weight: 300;
     font-size: 36px;
@@ -144,23 +139,27 @@
 
  }
 
+ .botões{
+    margin-top: 70px;
+ }
 
 .botao {
-    width: 173px;
-    height: 42px;
-    left: 15%;
-    top: 35%;
-    position:absolute;
+   
     background: #3700B3;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 9px;
+
     font-weight: 300;
     font-size: 20px;
+    color: #D9D9D9;
+    ;
     line-height: 36px;
     align-items: center;
-    color: #D9D9D9;
-    margin: 10px;
-    margin-top: 30px;
+    border: none;
+    
+    min-width: 160px;
+
+    
 }
 
 button{
