@@ -18,7 +18,6 @@ export default function Login(){
             email, 
             senha,
         }         
-        //login(email,senha);
         Logar(obj);
     };
 
