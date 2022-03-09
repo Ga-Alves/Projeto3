@@ -2,7 +2,6 @@ import api from '../../Service/api'
 
 
 function criarJogo(body){
-   console.log("passou aqui")
    api.post('/jogos/', body)
    .then((res) =>{
       console.log(res);
@@ -14,17 +13,38 @@ function criarJogo(body){
 }
 
 
-function getTodosJogos(){
-   let response;
-  
-   api.get('/jogos/')
+async function getTodosJogos(){  
+   const response = await api.get('/jogos/')
+   
+   return response.data;
+}
+
+async function deleteJogo(id){  
+   await api.delete(`/jogos/${id}`)
    .then((res) =>{
-      response = res.data;
-      return response;
+      console.log(res);
    })
    .catch((err) =>{
       console.log(err);
-   });  
+   });
 }
 
-export { criarJogo , getTodosJogos }
+async function editarJogo(id, body){  
+
+   console.group("dentro editar")
+   console.log(id)
+   console.log(body)
+   console.groupEnd("dentro editar")
+
+   await api.put(`/jogos/${id}`, body)
+   .then((res) =>{
+      console.log("success:")
+      console.log(res);
+   })
+   .catch((err) =>{
+      console.log("error:")
+      console.log(err);
+   });
+}
+
+export { criarJogo , getTodosJogos, deleteJogo, editarJogo}

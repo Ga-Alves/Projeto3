@@ -7,8 +7,13 @@ import { useState } from "react";
 // import edit from '../../images/edit.svg';
 // import remove from '../../images/remove.svg';
 // import Item from '../Item/Item';
-export default function Table({games}) {
+export default function Table({idUsuario, games, onModalClose}) {
     const [openModalAddGame, setOpenModalAddGame] = useState(false);
+    
+    const handleClose = () => {
+        onModalClose()
+    }
+    
     return (
         <>
             <div class="tabela">
@@ -32,7 +37,7 @@ export default function Table({games}) {
                         Adicionar um Jogo
                     <img src={add} alt="out" style={{paddingLeft: "7px"}}></img>
                 </div>
-                {openModalAddGame && <ModalAddGame closeModal={setOpenModalAddGame} />}
+                {openModalAddGame && <ModalAddGame closeModal={setOpenModalAddGame} onModalClose={handleClose}/>}
             </div>
         </>
     );
