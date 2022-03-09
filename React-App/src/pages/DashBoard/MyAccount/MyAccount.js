@@ -6,7 +6,6 @@ import GetUserId from "../../../Requests/Usuario/GetUserId";
 import Ver_Usuario from "../../../Requests/Usuario/Ver_Usuario";
 
 export default function MyAccount() {
-
   const [usuario, setUsuario] = useState('')
 
   const Id = GetUserId();
@@ -14,6 +13,7 @@ export default function MyAccount() {
   useEffect(() => {
     Ver_Usuario(Id).then(setUsuario)
   }, [])
+  console.log(usuario)
 
 
   const onSubmitNome =(value)=>{
@@ -51,14 +51,16 @@ export default function MyAccount() {
       if(res.isConfirmed){
         onSubmitNome(res.value);
         setUsuario(res.value)
-        document.location.reload(true);
+
         Swal.fire({
           icon: "success" ,
-          timer: "3000"  , 
+          timer: '1000' , 
           showConfirmButton: false,
           text: "Edição enviada"
-        })
+        }).then(()=> document.location.reload())
+        
       }
+      
     })   
   }
 
@@ -67,7 +69,7 @@ export default function MyAccount() {
       title:'Editar Email',
       input: 'text',
       inputLabel: 'Novo Email',
-      confirmButtonText: `Enviar`,
+      confirmButtonText: `Confirmar`,
       cancelButtonText:`Cancelar`,
       showCancelButton: true,
       preConfirm: (value) => {
@@ -82,7 +84,6 @@ export default function MyAccount() {
       console.log(res);
       if(res.isConfirmed){
         onSubmitEmail(res.value)
-        document.location.reload(true);
         setUsuario(res.value)
         Swal.fire({
           icon: "success", 
@@ -90,16 +91,17 @@ export default function MyAccount() {
           showConfirmButton: false,
           text: 'Edição enviada'
         })
-        
+         
       }   
+      
     })   
     
   }
 
  
   return (
-    <>
-      <h1 className = 'conta'>MINHA CONTA</h1>
+    <div className="MyAccount">
+      <h2 >MINHA CONTA</h2>
 
       <div className="forms">
         <label className="labele">Nome</label>
@@ -120,7 +122,7 @@ export default function MyAccount() {
         />
       </div>
 
-      <div >
+      <div className="botões" >
         <button
           className="botao"
           onClick={() => OpenModalEmail()}
@@ -137,6 +139,6 @@ export default function MyAccount() {
           Editar Nome
         </button>
       </div>
-    </>
+    </div>
   );
 }

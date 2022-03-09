@@ -1,11 +1,14 @@
 .navbar {
     align-items: start;
-    background: #333333;
-    width: 10vh;
-    /* height: 100vh; */
     align-items: flex-start;
-    /* align-items: center; */
-    /* justify-content: center; */
+
+    width: 10vh;
+    height: 100vh;
+  
+    background: #333333;
+    
+    position: fixed;
+
   }
 .icon {
     margin-right: 50%;

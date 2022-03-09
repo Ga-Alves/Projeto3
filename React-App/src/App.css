@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .App {
-  /* background-color: #252525; */
   background-color: #252525;
-  /* min-height: 100vh; */
-  /* height: 100%; */
+  min-height: 100vh; 
+  height: auto;
+  min-width: 100vh; 
   font-size: calc(10px + 2vmin);
   color: white;
-  /* overflow-y: auto; */
   display: flex;
+  
 }
 
 
