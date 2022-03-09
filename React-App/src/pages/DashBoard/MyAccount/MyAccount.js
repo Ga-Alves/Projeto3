@@ -1,12 +1,34 @@
 import "./MyAccount.css";
-import React from "react";
+import React,{useState, useEffect} from "react";
 import Edit_User from '../../../Requests/Usuario/Edit_User'
 import Swal from 'sweetalert2'
 import GetUserId from "../../../Requests/Usuario/GetUserId";
+import Ver_Usuario from "../../../Requests/Usuario/Ver_Usuario";
 
 export default function MyAccount() {
 
+  const [usuario, setUsuario] = useState('')
+
   const Id = GetUserId();
+  
+  useEffect(() => {
+    Ver_Usuario(Id).then(setUsuario)
+  }, [])
+
+
+  const onSubmitNome =(value)=>{
+    const Body = {
+      nome: value
+    }
+    Edit_User(Body, Id)
+  }
+  
+  const onSubmitEmail =(value)=>{
+    const Body = {
+      email: value
+    }
+    Edit_User(Body, Id)
+  }
 
   const OpenModalNome =()=>{
     Swal.fire({
@@ -28,6 +50,8 @@ export default function MyAccount() {
       console.log(res);
       if(res.isConfirmed){
         onSubmitNome(res.value);
+        setUsuario(res.value)
+        document.location.reload(true);
         Swal.fire({
           icon: "success" ,
           timer: "3000"  , 
@@ -57,32 +81,22 @@ export default function MyAccount() {
     }).then((res)=>{
       console.log(res);
       if(res.isConfirmed){
+        onSubmitEmail(res.value)
+        document.location.reload(true);
+        setUsuario(res.value)
         Swal.fire({
           icon: "success", 
           timer: "3000" ,
           showConfirmButton: false,
           text: 'Edição enviada'
         })
-        onSubmitEmail(res.value)
+        
       }   
     })   
     
   }
 
-  const onSubmitNome =(value)=>{
-    const Body = {
-      nome: value
-    }
-    Edit_User(Body, Id)
-  }
-  
-  const onSubmitEmail =(value)=>{
-    const Body = {
-      email: value
-    }
-    Edit_User(Body, Id)
-  }
-
+ 
   return (
     <>
       <h1 className = 'conta'>MINHA CONTA</h1>
@@ -93,7 +107,7 @@ export default function MyAccount() {
             className="input"
             type = "text"
             readOnly={true}
-            value={'marcelo'}
+            value={usuario.nome}
              />
         <label className="labele">Email</label>
 
@@ -101,7 +115,7 @@ export default function MyAccount() {
           className="input"
           type="text"
           readOnly={true}
-          value={'marcelo@gmail.com'}
+          value={usuario.email}
           
         />
       </div>
@@ -122,9 +136,6 @@ export default function MyAccount() {
         >
           Editar Nome
         </button>
-       {/*  <button onClick ={()=> consultar()}> 
-          consultar
-        </button> */}
       </div>
     </>
   );
