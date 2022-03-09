@@ -37,7 +37,7 @@ export default function MyAccount() {
       inputLabel: 'Novo Nome',
       showCancelButton: true,
       cancelButtonText:`Cancelar`,
-      confirmButtonText: `Enviar`, 
+      confirmButtonText: `Confirmar`, 
       preConfirm: (value) => {
         if (!value) {
           Swal.showValidationMessage(
@@ -69,8 +69,8 @@ export default function MyAccount() {
       title:'Editar Email',
       input: 'text',
       inputLabel: 'Novo Email',
-      confirmButtonText: `Confirmar`,
       cancelButtonText:`Cancelar`,
+      confirmButtonText: `Confirmar`, 
       showCancelButton: true,
       preConfirm: (value) => {
         if (!value) {
@@ -101,7 +101,7 @@ export default function MyAccount() {
  
   return (
     <div className="MyAccount">
-      <h2 >MINHA CONTA</h2>
+      <h2 className ="title">MINHA CONTA</h2>
 
       <div className="forms">
         <label className="labele">Nome</label>
