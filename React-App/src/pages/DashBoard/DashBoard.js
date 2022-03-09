@@ -20,8 +20,8 @@ export default function Dashboard() {
   }
 
     return (
-       <div>
-           <Navbar className="navbar, align-items-start">
+       <>
+           <Navbar className="navbar">
             <Container>
             <Nav className="flex-column">
               <Nav.Link href="/dashBoard/home" ><img src={home} alt="home"></img ></Nav.Link>
@@ -36,6 +36,6 @@ export default function Dashboard() {
 
           {<Outlet />}
           <p>{String(authenticated)}</p>
-       </div>
+       </>
     );
   }

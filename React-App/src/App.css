@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .App {
+  /* background-color: #252525; */
   background-color: #252525;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  /* height: 100%; */
   font-size: calc(10px + 2vmin);
   color: white;
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  display: flex;
 }
-.navbar {
-  align-items: start;
-  background: #333333;
-  width: 10vh;
-  height: 100vh;
-}
+
 
 .nav-link {
   padding-top: 32px;

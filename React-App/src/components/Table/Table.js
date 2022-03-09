@@ -31,6 +31,7 @@ export default function Table({idUsuario, games, onModalClose}) {
                         </img>
                     </div>
                 </div>
+
                 {games.map(a => <>{a}</>)}
 
                 <div
@@ -39,6 +40,7 @@ export default function Table({idUsuario, games, onModalClose}) {
                         Adicionar um Jogo
                     <img src={add} alt="out" style={{paddingLeft: "7px"}}></img>
                 </div>
+                
                 {openModalAddGame && <ModalAddGame closeModal={setOpenModalAddGame} onModalClose={handleClose}/>}
             </div>
         </>
