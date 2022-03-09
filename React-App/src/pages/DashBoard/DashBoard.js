@@ -13,7 +13,7 @@ import { Outlet } from "react-router";
 // import { Container, Row, Col } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Dashboard() {
-  const {authenticated, logout } = useContext(AuthContext);
+  const { logout } = useContext(AuthContext);
 
   const handleLogout = () => {
     logout();
@@ -35,7 +35,6 @@ export default function Dashboard() {
           </Navbar>
 
           {<Outlet />}
-          <p>{String(authenticated)}</p>
        </>
     );
   }
