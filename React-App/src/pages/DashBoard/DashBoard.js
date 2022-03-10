@@ -18,14 +18,19 @@ export default function Dashboard() {
     logout();
   }
 
+  const activePage = window.location.pathname; 
+  
+  
+  console.log(activePage)
+
     return (
        <>
           <Navbar className="navbar">
             <Container>
             <Nav className="flex-column">
-              <Nav.Link  href="/dashBoard/home" ><img src={home} alt="home"></img ></Nav.Link>
-              <Nav.Link  href="/dashBoard/games"><img src={games} alt="games"></img></Nav.Link>
-              <Nav.Link active href="/dashBoard/account" ><img src={account} alt="count"></img></Nav.Link>
+              <Nav.Link  href="/dashBoard/home" className={activePage.endsWith('home') ? 'ativo' : null}><img src={home} alt="home"></img ></Nav.Link>
+              <Nav.Link  href="/dashBoard/games" className={activePage.endsWith('games') ? 'ativo' : null}><img src={games} alt="games"></img></Nav.Link>
+              <Nav.Link active href="/dashBoard/account" className={activePage.endsWith('account') ? 'ativo' : null}><img src={account} alt="count"></img></Nav.Link>
               <Nav.Link className="xx" href="/">
                 <img src={out} alt="out" onClick={handleLogout}/>
               </Nav.Link>

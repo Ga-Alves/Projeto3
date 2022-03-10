@@ -34,7 +34,7 @@ export default function Home() {
         <>
             <div className="MyGames">
                 <h1 className="MyGamesTitle">Meus jogos</h1>
-                <Table games={jogos} todosJogos={todosJogos}setTodosJogos={setTodosJogos} handleRenderPage={handleRenderPage}></Table>
+                <Table games={jogos} handleRenderPage={handleRenderPage}></Table>
             </div>
         </>
     );
