@@ -26,7 +26,7 @@ export default function Dashboard() {
             <Nav className="flex-column">
               <Nav.Link  href="/dashBoard/home" ><img src={home} alt="home"></img ></Nav.Link>
               <Nav.Link  href="/dashBoard/games"><img src={games} alt="games"></img></Nav.Link>
-              <Nav.Link desactive href="/dashBoard/account" ><img src={account} alt="count"></img></Nav.Link>
+              <Nav.Link active href="/dashBoard/account" ><img src={account} alt="count"></img></Nav.Link>
               <Nav.Link className="xx" href="/">
                 <img src={out} alt="out" onClick={handleLogout}/>
               </Nav.Link>

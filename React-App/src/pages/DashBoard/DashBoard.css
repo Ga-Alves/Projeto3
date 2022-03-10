@@ -21,6 +21,6 @@
   padding: 20px !important;
 }
 
-/* .navbar-nav .active  {
-  background-color: red !important;
-} */
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgb(255 0 0 );
+}
