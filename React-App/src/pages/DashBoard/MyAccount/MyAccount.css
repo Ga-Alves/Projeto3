@@ -14,12 +14,13 @@
 
 }
 .MyAccountTitle {
-    margin: 10px 20px;
+    margin: 10px 30px;
+    font-size: 52px;
     font-size: 52px;
 }
 
 .forms{
-    margin: 55px 20px;
+    margin: 55px 30px;
     display: flex;
     flex-direction: column;
     /* margin: 20px 0px ; */
@@ -146,7 +147,7 @@
 
  .botões{
     margin-top: 70px;
-    margin: 30px 20px;
+    margin: 30px 30px;
  }
 
 .botao {
