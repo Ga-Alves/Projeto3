@@ -91,7 +91,7 @@ export default function Table({ todosJogos, games, handleRenderPage, setTodosJog
                   <img src={add} alt="out" style={{paddingLeft: "7px"}}></img>
               </div>
               
-              {openModalAddGame && <ModalAddGame closeModal={setOpenModalAddGame} handleRenderPage={handleClose}/>}
+              {openModalAddGame && <ModalAddGame closeModal={setOpenModalAddGame} onModalClose={handleClose}/>}
           </div>
         </>
     );
