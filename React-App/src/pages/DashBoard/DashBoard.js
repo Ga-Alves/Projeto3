@@ -1,8 +1,7 @@
 import "./DashBoard.css";
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import React,{useContext, useState} from "react";
+import React,{ useContext } from "react";
 import { AuthContext } from "../../contexts/auth";
-
 
 import home from '../../images/home.svg';
 import games from '../../images/games.svg';
@@ -21,7 +20,7 @@ export default function Dashboard() {
 
     return (
        <>
-           <Navbar className="navbar">
+          <Navbar className="navbar">
             <Container>
             <Nav className="flex-column">
               <Nav.Link  href="/dashBoard/home" ><img src={home} alt="home"></img ></Nav.Link>

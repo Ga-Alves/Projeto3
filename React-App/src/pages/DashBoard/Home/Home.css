@@ -1,0 +1,10 @@
+.MyGames {
+    width: 90vw;
+    margin-left: 12vw;
+    margin-top: 4vh;
+    margin-bottom: 20vh;
+}
+.MyGamesTitle {
+    margin: 10px 30px;
+    font-size: 52px;
+}

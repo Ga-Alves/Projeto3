@@ -20,13 +20,14 @@
 }
 
 .tabela {
-  margin-top:10%;
+  margin-top:60px;
   margin-bottom:5%;
-  margin-left:10%;
+  margin-left:10px;
   justify-content: center;
   left: 13%;
-  width:80%;
+  width:80vw;
   /* position: absolute; */
   border-style: none;
   background-color: #252525;
+  /* background-color: aqua; */
 }

@@ -4,7 +4,7 @@ import api from '../../Service/api'
 function criarJogo(body){
    api.post('/jogos/', body)
    .then((res) =>{
-      console.log(res);
+      console.log("criou",res);
    })
    .catch((err) =>{
       console.log(err);

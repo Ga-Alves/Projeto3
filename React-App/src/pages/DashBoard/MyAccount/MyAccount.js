@@ -8,26 +8,23 @@ import Ver_Usuario from "../../../Requests/Usuario/Ver_Usuario";
 export default function MyAccount() {
   const [usuario, setUsuario] = useState('')
 
-  const Id = GetUserId();
-  
   useEffect(() => {
-    Ver_Usuario(Id).then(setUsuario)
+    Ver_Usuario(GetUserId()).then(setUsuario)
   }, [])
   console.log(usuario)
-
 
   const onSubmitNome =(value)=>{
     const Body = {
       nome: value
     }
-    Edit_User(Body, Id)
+    Edit_User(Body, GetUserId())
   }
   
   const onSubmitEmail =(value)=>{
     const Body = {
       email: value
     }
-    Edit_User(Body, Id)
+    Edit_User(Body, GetUserId())
   }
 
   const OpenModalNome =()=>{
@@ -95,13 +92,11 @@ export default function MyAccount() {
       }   
       
     })   
-    
   }
-
  
   return (
     <div className="MyAccount">
-      <h2 >MINHA CONTA</h2>
+      <h2 className="MyAccountTitle">MINHA CONTA</h2>
 
       <div className="forms">
         <label className="labele">Nome</label>

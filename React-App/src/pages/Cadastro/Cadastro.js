@@ -4,12 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 import Criar_Usuario from "../../Requests/Usuario/Criar_Usuario";
-
 import voltar from '../../images/voltar.svg';
 
-
 export default function Cadastro(){
-
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
@@ -21,7 +18,7 @@ export default function Cadastro(){
             senha,
             nome,
         }
-        if( senha == confirmarSenha ){
+        if( senha === confirmarSenha ){
             Criar_Usuario(obj);
         }
         else{
@@ -32,22 +29,15 @@ export default function Cadastro(){
     const handleOnChangeEmail = (e) => {    
         setEmail(e.target.value)
     };
-    
     const handleOnChangeSenha = (e) => {    
         setSenha(e.target.value)
     };
-
     const handleOnChangeConfirmarSenha = (e) => {    
         setConfirmarSenha(e.target.value)
     };
-
     const handleOnChangeNome = (e) => {    
         setNome(e.target.value)
     };
-
-
-
-
 
     return(
         <div id="Pg2" className ="d-flex flex-column justify-content-center align-items-center" >
@@ -72,7 +62,6 @@ export default function Cadastro(){
             </div>
 
             <Link to="/"><img className="voltar-btn" src={voltar} alt="voltar"/></Link>
-            
 
         </div>
     );
