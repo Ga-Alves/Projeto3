@@ -30,7 +30,7 @@ export default function Login(){
         <div id="Pg1" className ="d-flex justify-content-center align-items-center" >
             <div className="d-flex flex-column mb-1">
 
-            <div className="p-2">
+            <div className="p-2 ">
                 <label for="email" className="label-Login">Email</label>
                 <input type="email" placeholder="" value={email} onChange={handleOnChangeEmail} className="input-Login"></input>
             </div>
@@ -40,7 +40,7 @@ export default function Login(){
                 <input type="password" placeholder="" value={senha} onChange={handleOnChangeSenha} className="input-Login"></input>
             </div>
 
-            <div className="d-flex justify-content-center">
+            <div className="d-flex mt-3 justify-content-center">
                 <button className="login-btn" onClick={() => handleClick()}>Entrar</button>
             </div>
 
