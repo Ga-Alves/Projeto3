@@ -29,12 +29,17 @@ export default function MyAccount() {
 
   const OpenModalNome =()=>{
     Swal.fire({
+      customClass: {
+        cancelButton: 'order-1 right-gap',
+        confirmButton: 'order-2',
+        popup: 'MyAccountSwall',
+      },
       title: "Editar Nome",
       input: 'text',
       inputLabel: 'Novo Nome',
       showCancelButton: true,
       cancelButtonText:`Cancelar`,
-      confirmButtonText: `Enviar`, 
+      confirmButtonText: `Confirmar`, 
       preConfirm: (value) => {
         if (!value) {
           Swal.showValidationMessage(
@@ -50,8 +55,11 @@ export default function MyAccount() {
         setUsuario(res.value)
 
         Swal.fire({
+          customCLass: {
+            popup: 'MyAccountSwallCheck'
+          },
           icon: "success" ,
-          timer: '1000' , 
+          timer: '3000' , 
           showConfirmButton: false,
           text: "Edição enviada"
         }).then(()=> document.location.reload())
@@ -63,6 +71,11 @@ export default function MyAccount() {
 
   const OpenModalEmail =()=>{
     Swal.fire({
+      customClass: {
+        cancelButton: 'order-1 right-gap',
+        confirmButton: 'order-2',
+        popup: 'MyAccountSwall',
+      },
       title:'Editar Email',
       input: 'text',
       inputLabel: 'Novo Email',
@@ -87,7 +100,7 @@ export default function MyAccount() {
           timer: "3000" ,
           showConfirmButton: false,
           text: 'Edição enviada'
-        })
+        }).then(()=> document.location.reload())
          
       }   
       
@@ -99,14 +112,14 @@ export default function MyAccount() {
       <h2 className="MyAccountTitle">MINHA CONTA</h2>
 
       <div className="forms">
-        <label className="labele">Nome</label>
+        <label className="Nome_Iput">Nome</label>
         <input
             className="input"
             type = "text"
             readOnly={true}
             value={usuario.nome}
              />
-        <label className="labele">Email</label>
+        <label className="Nome_Iput">Email</label>
 
         <input
           className="input"
@@ -118,6 +131,14 @@ export default function MyAccount() {
       </div>
 
       <div className="botões" >
+       
+        <button
+          className="botao"
+          onClick={() => OpenModalNome()}
+        >
+          Editar Nome
+        </button>
+
         <button
           className="botao"
           onClick={() => OpenModalEmail()}
@@ -125,14 +146,6 @@ export default function MyAccount() {
           Editar Email
         </button>
 
-
-        <button
-          className="botao"
-          style={{top: "45%", marginTop: "30px"}}
-          onClick={() => OpenModalNome()}
-        >
-          Editar Nome
-        </button>
       </div>
     </div>
   );
