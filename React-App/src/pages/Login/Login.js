@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./Login.css"
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import {Link} from 'react-router-dom'
 import Logar from "../../Requests/Usuario/Logar";
-
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
     const [email, setEmail] = useState('');
@@ -27,24 +25,24 @@ export default function Login(){
     };
 
     return(
-        <div id="Pg1" className ="d-flex justify-content-center align-items-center" >
-            <div className="d-flex flex-column mb-1">
+        <div id="Pg1">
+            <div className="container">
 
-            <div className="p-2">
+            <div>
                 <label for="email" className="label-Login">Email</label>
                 <input type="email" placeholder="" value={email} onChange={handleOnChangeEmail} className="input-Login"></input>
             </div>
 
-            <div className="p-2">
+            <div>
                 <label for="senha" className="label-Login">Senha</label>
                 <input type="password" placeholder="" value={senha} onChange={handleOnChangeSenha} className="input-Login"></input>
             </div>
 
-            <div className="d-flex justify-content-center">
+            <div>
                 <button className="login-btn" onClick={() => handleClick()}>Entrar</button>
             </div>
 
-            <div class="d-flex p-2 justify-content-center">
+            <div>
                 <Link className="link" to='/cadastro'>Novo usuário? Cadastre-se Aqui</Link>
             </div>
 

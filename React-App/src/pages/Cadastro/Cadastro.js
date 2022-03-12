@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 import Criar_Usuario from "../../Requests/Usuario/Criar_Usuario";
+import Swal from 'sweetalert2'
 
 import voltar from '../../images/voltar.svg';
 
@@ -26,6 +27,12 @@ export default function Cadastro(){
         }
         else{
             console.log("senhas diferentes");
+            Swal.fire({
+                icon: 'error',
+                text: 'Senhas não coincidem',
+            });
+            // setSenha("");
+            // setConfirmarSenha("");
         }
     };
 

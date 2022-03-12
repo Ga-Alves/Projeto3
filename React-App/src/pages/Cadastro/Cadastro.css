@@ -63,3 +63,14 @@
     top:20px;
     left: 20px;
 }
+
+.swal12-html-container{
+
+    font-size: 40px !important;
+
+}
+
+.swal2-styled.swal2-confirm{
+    padding: 3px;
+    font-size: 28px;
+}
