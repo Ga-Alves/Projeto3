@@ -33,8 +33,11 @@ export default function Games() {
 
     return (
         <>
-            <h1>Todos os jogos</h1>
-            <Table games={jogos} onModalClose={handleRenderPage}></Table>
+            <div className="Games">
+                <h1 className="GamesTitle">Todos os jogos</h1>
+                <Table games={jogos} onModalClose={handleRenderPage}></Table>
+            </div>
+
         </>
     );
   }

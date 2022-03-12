@@ -25,21 +25,21 @@ export default function Item(props) {
         <>
             <div className="game row">
                 <div className="col-3">{props.titulo}</div>
-                <div className="col-3">R${props.preco}</div>
+                <div className="col-2">R${props.preco}</div>
                 <div className="col-4">
-                    <div className=" col-4 bd-highlight mb-3 flex-row d-inline-flex">
+                    <div className=" col-4 bd-highlight mb-3 ml-5 flex-row d-inline-flex">
                         {props.genero.map(a => <div className="genero">{a}{props.ofUser}</div>)}
                     </div>
                 </div>
                 <div 
                     className="pointer col"
                     style={ props.ofUser ? {} : { display: "none" } } 
-                    onClick={() => { if (!openModalEdit) setOpenModalEdit(true);}}><img src={edit} alt="out"></img>
+                    onClick={() => { if (!openModalEdit) setOpenModalEdit(true);}}><img className="icon" src={edit} alt="out"></img>
                 </div>
                 <div 
                     className="pointer col"
                     style={ props.ofUser ? {} : { display: "none" } } 
-                    onClick={() => handleRemove()} ><img src={remove} alt="out"></img>
+                    onClick={() => handleRemove()} ><img className="icon"src={remove} alt="out"></img>
                 </div>
                 {openModalEdit && <ModalEditGame closeModal={setOpenModalEdit} onModalClose={handleClose()} jogo={props} />}
             </div>

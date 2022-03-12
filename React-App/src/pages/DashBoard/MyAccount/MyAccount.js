@@ -8,36 +8,38 @@ import Ver_Usuario from "../../../Requests/Usuario/Ver_Usuario";
 export default function MyAccount() {
   const [usuario, setUsuario] = useState('')
 
-  const Id = GetUserId();
-  
   useEffect(() => {
-    Ver_Usuario(Id).then(setUsuario)
+    Ver_Usuario(GetUserId()).then(setUsuario)
   }, [])
   console.log(usuario)
-
 
   const onSubmitNome =(value)=>{
     const Body = {
       nome: value
     }
-    Edit_User(Body, Id)
+    Edit_User(Body, GetUserId())
   }
   
   const onSubmitEmail =(value)=>{
     const Body = {
       email: value
     }
-    Edit_User(Body, Id)
+    Edit_User(Body, GetUserId())
   }
 
   const OpenModalNome =()=>{
     Swal.fire({
+      customClass: {
+        cancelButton: 'order-1 right-gap',
+        confirmButton: 'order-2',
+        popup: 'MyAccountSwall',
+      },
       title: "Editar Nome",
       input: 'text',
       inputLabel: 'Novo Nome',
       showCancelButton: true,
       cancelButtonText:`Cancelar`,
-      confirmButtonText: `Enviar`, 
+      confirmButtonText: `Confirmar`, 
       preConfirm: (value) => {
         if (!value) {
           Swal.showValidationMessage(
@@ -53,8 +55,11 @@ export default function MyAccount() {
         setUsuario(res.value)
 
         Swal.fire({
+          customCLass: {
+            popup: 'MyAccountSwallCheck'
+          },
           icon: "success" ,
-          timer: '1000' , 
+          timer: '3000' , 
           showConfirmButton: false,
           text: "Edição enviada"
         }).then(()=> document.location.reload())
@@ -66,6 +71,11 @@ export default function MyAccount() {
 
   const OpenModalEmail =()=>{
     Swal.fire({
+      customClass: {
+        cancelButton: 'order-1 right-gap',
+        confirmButton: 'order-2',
+        popup: 'MyAccountSwall',
+      },
       title:'Editar Email',
       input: 'text',
       inputLabel: 'Novo Email',
@@ -90,28 +100,26 @@ export default function MyAccount() {
           timer: "3000" ,
           showConfirmButton: false,
           text: 'Edição enviada'
-        })
+        }).then(()=> document.location.reload())
          
       }   
       
     })   
-    
   }
-
  
   return (
     <div className="MyAccount">
-      <h2 >MINHA CONTA</h2>
+      <h2 className="MyAccountTitle">MINHA CONTA</h2>
 
       <div className="forms">
-        <label className="labele">Nome</label>
+        <label className="Nome_Iput">Nome</label>
         <input
             className="input"
             type = "text"
             readOnly={true}
             value={usuario.nome}
              />
-        <label className="labele">Email</label>
+        <label className="Nome_Iput">Email</label>
 
         <input
           className="input"
@@ -123,6 +131,14 @@ export default function MyAccount() {
       </div>
 
       <div className="botões" >
+       
+        <button
+          className="botao"
+          onClick={() => OpenModalNome()}
+        >
+          Editar Nome
+        </button>
+
         <button
           className="botao"
           onClick={() => OpenModalEmail()}
@@ -130,14 +146,6 @@ export default function MyAccount() {
           Editar Email
         </button>
 
-
-        <button
-          className="botao"
-          style={{top: "45%", marginTop: "30px"}}
-          onClick={() => OpenModalNome()}
-        >
-          Editar Nome
-        </button>
       </div>
     </div>
   );
