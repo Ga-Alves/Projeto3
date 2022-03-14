@@ -33,7 +33,7 @@ export default function Home() {
     return (
         <>
             <div className="MyGames">
-                <h1 className="MyGamesTitle">Meus jogos</h1>
+                <h1 className="MyGamesTitle">Meus Jogos</h1>
                 <Table games={jogos} handleRenderPage={handleRenderPage}></Table>
             </div>
         </>

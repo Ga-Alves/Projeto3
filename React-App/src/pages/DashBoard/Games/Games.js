@@ -34,7 +34,7 @@ export default function Games() {
     return (
         <>
             <div className="Games">
-                <h1 className="GamesTitle">Todos os jogos</h1>
+                <h1 className="GamesTitle">Todos Jogos</h1>
                 <Table games={jogos} onModalClose={handleRenderPage}></Table>
             </div>
 

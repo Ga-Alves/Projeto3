@@ -44,7 +44,7 @@ export default function Login(){
             </div>
 
             <div className="div-btn">
-                <Link className="link" to='/cadastro'>Novo usuário? Cadastre-se Aqui</Link>
+                <Link className="link" to='/cadastro'>Novo usuário? Cadastre-se aqui</Link>
             </div>
 
             </div>

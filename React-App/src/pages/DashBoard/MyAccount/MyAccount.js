@@ -109,7 +109,7 @@ export default function MyAccount() {
  
   return (
     <div className="MyAccount">
-      <h2 className="MyAccountTitle">MINHA CONTA</h2>
+      <h2 className="MyAccountTitle">Minha Conta</h2>
 
       <div className="forms">
         <label className="Nome_Iput">Nome</label>
