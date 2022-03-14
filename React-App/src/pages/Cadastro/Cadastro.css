@@ -2,10 +2,35 @@
 
 
 #Pg2{
+    background-color: #121212;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
 }
+
+.container{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.bloco{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.div-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
   
 .input-Cadastro{
@@ -66,22 +91,29 @@
 
 .voltar-btn{
     position: absolute;
-<<<<<<< HEAD
-    top:20px;
-    left: 20px;
-}
-
-.swal12-html-container{
-
-    font-size: 40px !important;
-
-}
-
-.swal2-styled.swal2-confirm{
-    padding: 3px;
-    font-size: 28px;
-=======
     top:5vh;
     left: 5vw;
->>>>>>> 2fb80053b05249a14e23ae4c91e081eff5af676d
+}
+
+.erroSenhas .swal2-title{
+    background: #333333;
+    border-radius: 8px 8px 0px 0px;
+    font-style: normal;
+    font-weight: 275;
+    font-size: 36px;
+    line-height: 38px;
+    color: #D9D9D9 !important; 
+    padding: 15px;
+}
+
+.erroSenhas .swal2-styled.swal2-confirm{
+
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px ;
+    background-color: #3700B3;
+    color: #D9D9D9 !important;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    display: grid !important;
 }

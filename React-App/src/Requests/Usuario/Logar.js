@@ -2,6 +2,8 @@ import api from '../../Service/api'
 
 import history from '../../Service/history';
 
+import Swal from 'sweetalert2';
+
 
 export default function Logar(body){
 
@@ -16,6 +18,6 @@ export default function Logar(body){
     })
     .catch((err) =>{
         console.log("Err: ", err);
-        console.log(body)
+        console.log(body);
     })
 }

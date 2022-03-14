@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Login.css"
 import {Link} from 'react-router-dom'
 import Logar from "../../Requests/Usuario/Logar";
-import { useNavigate } from "react-router-dom";
 
 export default function Login(){
     const [email, setEmail] = useState('');
@@ -14,6 +13,8 @@ export default function Login(){
             senha,
         }         
         Logar(obj);
+        setEmail("");
+        setSenha("");
     };
 
     const handleOnChangeEmail = (e) => {    
@@ -26,13 +27,9 @@ export default function Login(){
 
     return(
         <div id="Pg1">
-            <div className="container">
+            <div className="bloco">
 
-<<<<<<< HEAD
             <div>
-=======
-            <div className="p-2 ">
->>>>>>> 2fb80053b05249a14e23ae4c91e081eff5af676d
                 <label for="email" className="label-Login">Email</label>
                 <input type="email" placeholder="" value={email} onChange={handleOnChangeEmail} className="input-Login"></input>
             </div>
@@ -42,11 +39,7 @@ export default function Login(){
                 <input type="password" placeholder="" value={senha} onChange={handleOnChangeSenha} className="input-Login"></input>
             </div>
 
-<<<<<<< HEAD
-            <div>
-=======
-            <div className="d-flex mt-3 justify-content-center">
->>>>>>> 2fb80053b05249a14e23ae4c91e081eff5af676d
+            <div className="div-btn">
                 <button className="login-btn" onClick={() => handleClick()}>Entrar</button>
             </div>
 
