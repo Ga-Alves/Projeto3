@@ -41,12 +41,12 @@ const AppRoutes = () =>{
                 <AuthProvider>
                     <Routes>
                     <Route exact path='/' element = {<Login/>} />
-                        <Route path='/cadastro' element = {<Cadastro/>} />
+                    <Route path='/cadastro' element = {<Cadastro/>} />
                         <Route path='/dashboard' element = {<Private><Dashboard/></Private>}>
                             <Route path='account' element = {<MyAccount/>} />
                             <Route path='home' element = {<Home/>} />
                             <Route path='games' element = {<Games/>} />
-                        </Route>           
+                        </Route>          
                     </Routes>
                 </AuthProvider>
             </Router>

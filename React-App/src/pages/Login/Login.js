@@ -43,7 +43,7 @@ export default function Login(){
                 <button className="login-btn" onClick={() => handleClick()}>Entrar</button>
             </div>
 
-            <div>
+            <div className="div-btn">
                 <Link className="link" to='/cadastro'>Novo usuário? Cadastre-se Aqui</Link>
             </div>
 

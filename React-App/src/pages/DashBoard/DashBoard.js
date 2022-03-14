@@ -24,7 +24,7 @@ export default function Dashboard() {
   console.log(activePage)
 
     return (
-       <>
+       <div className="App">
           <Navbar className="navbar">
             <Container>
             <Nav className="flex-column">
@@ -37,8 +37,7 @@ export default function Dashboard() {
             </Nav>
             </Container>
           </Navbar>
-
           {<Outlet />}
-       </>
+       </div>
     );
   }
