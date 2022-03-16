@@ -1,6 +1,5 @@
 import api from '../../Service/api'
 import Swal from 'sweetalert2';
-import history from '../../Service/history';
 
 
 

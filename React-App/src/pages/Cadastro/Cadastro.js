@@ -22,7 +22,9 @@ export default function Cadastro(){
         }
         if( senha === confirmarSenha ){
             Criar_Usuario(obj);
-            navigate("/");
+            setTimeout(function(){
+                navigate("/");
+            }, 3500);
         }
         else{
             console.log("senhas diferentes");

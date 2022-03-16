@@ -2,7 +2,6 @@ import api from '../../Service/api'
 
 import history from '../../Service/history';
 
-import Swal from 'sweetalert2';
 
 
 export default function Logar(body){
