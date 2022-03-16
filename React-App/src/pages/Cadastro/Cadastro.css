@@ -39,7 +39,7 @@
     font-size: 18px;
     line-height: 42px;
     width: 26vw;
-    height: 6vh;
+    height: 7vh;
     border:none;
     margin-bottom: 4vh;
     color: white;
@@ -96,8 +96,7 @@
 }
 
 .erroSenhas .swal2-title{
-    background: #333333;
-    border-radius: 8px 8px 0px 0px;
+    background: #2b2a2a;
     font-style: normal;
     font-weight: 275;
     font-size: 36px;
@@ -117,3 +116,5 @@
     text-align: center;
     display: grid !important;
 }
+
+
