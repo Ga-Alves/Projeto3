@@ -5,6 +5,7 @@ function criarJogo(body){
    api.post('/jogos/', body)
    .then((res) =>{
       console.log("criou",res);
+      document.location.reload()
    })
    .catch((err) =>{
       console.log(err);
@@ -30,16 +31,10 @@ async function deleteJogo(id){
 }
 
 async function editarJogo(id, body){  
-
-   console.group("dentro editar")
-   console.log(id)
-   console.log(body)
-   console.groupEnd("dentro editar")
-
    await api.put(`/jogos/${id}`, body)
    .then((res) =>{
       console.log("success:")
-      console.log(res);
+      document.location.reload()
    })
    .catch((err) =>{
       console.log("error:")

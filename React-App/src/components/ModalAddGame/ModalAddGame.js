@@ -21,7 +21,7 @@ export default function ModalAddGame({ closeModal , onModalClose}) {
   }
 
   const handleClickModal = () => {
-    if (nome && preco && genero) {
+    if (nome && !isNaN(preco) && genero) {
       criarJogo({ nome, preco,  genero});
     }
     onModalClose();
