@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import "./ModalAddGame.css";
-// import ReactDOM from "react-dom";
-
-
 import { criarJogo } from "../../Requests/Jogos/Jogos";
-
 
 export default function ModalAddGame({ closeModal , onModalClose}) {
 
@@ -25,14 +21,9 @@ export default function ModalAddGame({ closeModal , onModalClose}) {
   }
 
   const handleClickModal = () => {
-    const obj = {
-      nome,
-      preco, 
-      genero,
+    if (nome && preco && genero) {
+      criarJogo({ nome, preco,  genero});
     }
-
-    console.log(obj);
-    criarJogo(obj);
     onModalClose();
     closeModal(false)
   }
